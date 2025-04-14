@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from plant import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('plants/', views.ListPlantsAPI.as_view(), name='plant-list'),
 ]

@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.generics import ListAPIView
+from .serializers import PlantSerializer, Plant
 
-# Create your views here.
+class ListPlantsAPI(ListAPIView) : 
+    serializer_class = PlantSerializer
+    queryset = Plant.objects.all()
+    
+    
